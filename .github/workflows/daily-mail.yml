@@ -1,0 +1,33 @@
+name: Bot Gui Ban Tin Hang Ngay
+
+on:
+  schedule:
+    # 02:00 UTC = 09:00 Asia/Ho_Chi_Minh
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  gui-ban-tin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lay ma nguon
+        uses: actions/checkout@v4
+
+      - name: Cai dat Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Cai thu vien phu thuoc
+        run: npm install
+
+      - name: Gui ban tin hang ngay
+        run: npm run send:daily
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: "namkimu46@gmail.com"
+          MAIL_SUBJECT: ${{ secrets.MAIL_SUBJECT }}
+          MAIL_TIMEZONE: "Asia/Ho_Chi_Minh"
+          MAIL_MAX_RETRIES: "2"
+          MAIL_RECENT_HOURS: "24"

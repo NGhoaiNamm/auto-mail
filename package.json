@@ -1,0 +1,22 @@
+{
+  "name": "gmail-daily-mail-bot",
+  "version": "1.0.0",
+  "description": "Send one daily email using Gmail SMTP and GitHub Actions",
+  "main": "src/dailyJob.js",
+  "scripts": {
+    "send:daily": "node src/dailyJob.js"
+  },
+  "keywords": [
+    "gmail",
+    "nodemailer",
+    "scheduler",
+    "github-actions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.15",
+    "rss-parser": "^3.13.0"
+  }
+}
