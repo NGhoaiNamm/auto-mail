@@ -48,6 +48,7 @@ Trong repo GitHub, vào:
 
 Tạo các secret sau:
 
+- `GMAIL_USER`
 - `GMAIL_APP_PASSWORD`
 - `MAIL_SUBJECT` (optional)
 
