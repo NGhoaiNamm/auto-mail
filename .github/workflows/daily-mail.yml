@@ -2,8 +2,7 @@ name: Bot Gui Ban Tin Hang Ngay
 
 on:
   schedule:
-    # 02:00 UTC = 09:00 Asia/Ho_Chi_Minh
-    - cron: "0 2 * * *"
+    - cron: "0 23 * * *"
   workflow_dispatch:
 
 jobs:
